@@ -20,10 +20,10 @@ load_dotenv()
 
 def connect_db():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="AI_tutor"
+        host=os.getenv("DB_HOST", "localhost"),
+        user=os.getenv("DB_USER", "root"),
+        password=os.getenv("DB_PASSWORD", "root"),
+        database=os.getenv("DB_NAME", "AI_tutor")
     )
 
 
